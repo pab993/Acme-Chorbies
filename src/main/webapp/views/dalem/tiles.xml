@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="dalem/edit" extends="master.page">
+		<put-attribute name="title" value="Dalem's form" />
+		<put-attribute name="body" value="/views/dalem/edit.jsp" />
+	</definition>
+	
+	<definition name="dalem/editCancel" extends="master.page">
+		<put-attribute name="title" value="Dalem's cancel form" />
+		<put-attribute name="body" value="/views/dalem/editCancel.jsp" />
+	</definition>
+	
+	<definition name="dalem/list" extends="master.page">
+		<put-attribute name="title" value="Dalem's list" />
+		<put-attribute name="body" value="/views/dalem/list.jsp" />
+	</definition>
+	
+</tiles-definitions>

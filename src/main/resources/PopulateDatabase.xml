@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- * PopulateDatabase.xml * * Copyright (C) 2017 Universidad de Sevilla 
+	* * The use of this project is hereby constrained to the conditions of the 
+	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+
+	<!-- User accounts -->
+
+	<bean id="userAccountAdministrator" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMINISTRATOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccountAdministrator1" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="admin2" />
+		<property name="password" value="b8e7be5dfa2ce0714d21dcfc7d72382c" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMINISTRATOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountChorbi1" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="chorbi1" />
+		<property name="password" value="3daa859a294cdefb20a84840240a76f5" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CHORBI" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountChorbi2" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="chorbi2" />
+		<property name="password" value="0c8746de81268518ff83490301db8652" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CHORBI" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountChorbi3" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="chorbi3" />
+		<property name="password" value="a2da05a88eead7e64593826cafc6a7a7" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CHORBI" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountChorbi4" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="chorbi4" />
+		<property name="password" value="a09dd233386632e297a7f4f461989563" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CHORBI" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountChorbi5" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="chorbi5" />
+		<property name="password" value="7e062f6f2a4c0f7ec5abacef2917e033" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CHORBI" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountManager1" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="manager1" />
+		<property name="password" value="c240642ddef994358c96da82c0361a58" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountManager2" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="manager2" />
+		<property name="password" value="8df5127cd164b5bc2d2b78410a7eea0c" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccountManager3" class="security.UserAccount">
+		<property name="enabled" value="true" />
+		<property name="username" value="manager3" />
+		<property name="password" value="2d3a5db4a2a9717b43698520a8de57d0" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Other domain beans come here -->
+
+	<!-- ADMINISTRATOR -->
+
+	<bean id="admin" class="domain.Administrator">
+		<property name="name" value="NameAdmin1" />
+		<property name="surname" value="SurnameAdmin1" />
+		<property name="phoneNumber" value="(+34)647382999" />
+		<property name="email" value="admin@admin.com" />
+		<property name="userAccount" ref="userAccountAdministrator" />
+		<property name="dalems">
+			<list>
+				<ref bean="dalem1"/>
+				<ref bean="dalem2"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="admin2" class="domain.Administrator">
+		<property name="name" value="Mary" />
+		<property name="surname" value="SurnameAdmin2" />
+		<property name="phoneNumber" value="(+34)647382999" />
+		<property name="email" value="admin1@admin.com" />
+		<property name="userAccount" ref="userAccountAdministrator1" />
+		<property name="dalems">
+			<list>
+				<ref bean="dalem3"/>
+				<ref bean="dalem4"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- CHORBIES -->
+
+	<bean id="chorbi1" class="domain.Chorbi">
+		<property name="name" value="NameChorbi1" />
+		<property name="surname" value="SurnameChorbi" />
+		<property name="phoneNumber" value="(+34)647382899" />
+		<property name="email" value="chorbi1@chorbi.com" />
+		<property name="userAccount" ref="userAccountChorbi1" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="description" value="no me lo creo ni yo" />
+		<property name="relationship" value="ACTIVITIES" />
+		<property name="birth" value="12/11/1994" />
+		<property name="genre" value="MAN" />
+		<property name="searchTemplate" ref="template1" />
+		<property name="age" value="20" />
+		<property name="likesReceived">
+			<list>
+
+			</list>
+		</property>
+		<property name="likesSended">
+			<list>
+				<ref bean="likeChorbi1Chorbi4" />
+			</list>
+		</property>
+		<property name="events">
+			<list>
+				<ref bean="event4" />
+			</list>
+		</property>
+		<property name="monthlyFee" value="0." />
+	</bean>
+
+	<bean id="chorbi2" class="domain.Chorbi">
+		<property name="name" value="NameChorbi2" />
+		<property name="surname" value="SurnameChorbi2" />
+		<property name="phoneNumber" value="(+34)647382899" />
+		<property name="email" value="chorbi2@chorbi.com" />
+		<property name="userAccount" ref="userAccountChorbi2" />
+		<property name="picture" value="http://www.picture2.com" />
+		<property name="description" value="guiño, guiño" />
+		<property name="relationship" value="FRIENDSHIP" />
+		<property name="age" value="23" />
+		<property name="birth" value="10/10/1994" />
+		<property name="genre" value="MAN" />
+		<property name="searchTemplate" ref="template2" />
+		<property name="likesReceived">
+			<list>
+				<ref bean="likeChorbi3Chorbi2" />
+			</list>
+		</property>
+		<property name="likesSended">
+			<list>
+				<ref bean="likeChorbi2Chorbi3" />
+				<ref bean="likeChorbi2Chorbi4" />
+			</list>
+		</property>
+		<property name="events">
+			<list>
+				<ref bean="event2" />
+			</list>
+		</property>
+		<property name="monthlyFee" value="0." />
+	</bean>
+
+	<bean id="chorbi3" class="domain.Chorbi">
+		<property name="name" value="NameChorbi3" />
+		<property name="surname" value="SurnameChorbi3" />
+		<property name="phoneNumber" value="(+34)647382899" />
+		<property name="email" value="chorbi3@chorbi.com" />
+		<property name="userAccount" ref="userAccountChorbi3" />
+		<property name="picture" value="http://www.picture3.com" />
+		<property name="description" value="que tipo tengo" />
+		<property name="relationship" value="LOVE" />
+		<property name="age" value="28" />
+		<property name="birth" value="07/03/1995" />
+		<property name="genre" value="WOMAN" />
+		<property name="searchTemplate" ref="template3" />
+		<property name="events">
+			<list>
+				<ref bean="event5" />
+			</list>
+		</property>
+		<property name="likesReceived">
+			<list>
+				<ref bean="likeChorbi2Chorbi3" />
+			</list>
+		</property>
+		<property name="likesSended">
+			<list>
+				<ref bean="likeChorbi3Chorbi2" />
+			</list>
+		</property>
+		<property name="monthlyFee" value="0." />
+	</bean>
+
+	<bean id="chorbi4" class="domain.Chorbi">
+		<property name="name" value="NameChorbi4" />
+		<property name="surname" value="SurnameChorbi4" />
+		<property name="phoneNumber" value="(+34)644382899" />
+		<property name="email" value="chorbi4@chorbi4.com" />
+		<property name="userAccount" ref="userAccountChorbi4" />
+		<property name="age" value="23" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="description" value="que viva el Betis" />
+		<property name="relationship" value="ACTIVITIES" />
+		<property name="birth" value="09/01/1995" />
+		<property name="genre" value="WOMAN" />
+		<property name="searchTemplate" ref="template4" />
+		<property name="likesReceived">
+			<list>
+				<ref bean="likeChorbi1Chorbi4" />
+				<ref bean="likeChorbi2Chorbi4" />
+			</list>
+		</property>
+		<property name="likesSended">
+			<list>
+
+			</list>
+		</property>
+		<property name="monthlyFee" value="0." />
+	</bean>
+
+	<bean id="chorbi5" class="domain.Chorbi">
+		<property name="name" value="NameChorbi5" />
+		<property name="surname" value="SurnameChorbi5" />
+		<property name="phoneNumber" value="(+34)644382829" />
+		<property name="email" value="chorbi5@chorbi5.com" />
+		<property name="userAccount" ref="userAccountChorbi5" />
+		<property name="age" value="23" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="description" value="que viva el Betis" />
+		<property name="relationship" value="ACTIVITIES" />
+		<property name="birth" value="09/01/1995" />
+		<property name="genre" value="WOMAN" />
+		<property name="searchTemplate" ref="template5" />
+		<property name="likesReceived">
+			<list>
+
+			</list>
+		</property>
+		<property name="likesSended">
+			<list>
+
+			</list>
+		</property>
+		<property name="monthlyFee" value="0." />
+	</bean>
+
+	<!-- MANAGERS -->
+
+	<bean id="manager1" class="domain.Manager">
+		<property name="name" value="NameManager1" />
+		<property name="surname" value="SurnameManager1" />
+		<property name="phoneNumber" value="(+34)641342890" />
+		<property name="email" value="manager1@gmail.com" />
+		<property name="userAccount" ref="userAccountManager1" />
+		<property name="company" value="EasyDate S.L." />
+		<property name="vat" value="792314013204903333" />
+		<property name="fee" value="0" />
+		<property name="events">
+			<list>
+				<ref bean="event1" />
+				<ref bean="event2" />
+				<ref bean="event3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="manager2" class="domain.Manager">
+		<property name="name" value="NameManager2" />
+		<property name="surname" value="SurnameManager2" />
+		<property name="phoneNumber" value="(+34)645342891" />
+		<property name="email" value="manager2@gmail.com" />
+		<property name="userAccount" ref="userAccountManager2" />
+		<property name="company" value="HardDate S.L." />
+		<property name="vat" value="712314013294903393" />
+		<property name="fee" value="0" />
+		<property name="events">
+			<list>
+				<ref bean="event4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="manager3" class="domain.Manager">
+		<property name="name" value="NameManager3" />
+		<property name="surname" value="SurnameManager3" />
+		<property name="phoneNumber" value="(+34)647342092" />
+		<property name="email" value="manager3@gmail.com" />
+		<property name="userAccount" ref="userAccountManager3" />
+		<property name="company" value="HardDate S.L." />
+		<property name="vat" value="712314015294903393" />
+		<property name="fee" value="0" />
+		<property name="events">
+			<list>
+				<ref bean="event5" />
+				<ref bean="event6" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- EVENTS -->
+
+	<bean id="event1" class="domain.Event">
+		<property name="title" value="event1" />
+		<property name="description" value="This is a enable event" />
+		<property name="moment" value="2017/05/05 12:00" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="seatsNumber" value="20" />
+		<property name="manager" ref="manager1"/>
+		<property name="chorbies">
+			<list>
+			</list>
+		</property>
+		<property name="dalems">
+			<list>
+				<ref bean="dalem1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="event2" class="domain.Event">
+		<property name="title" value="event2" />
+		<property name="description" value="This is a event with chorbi 2 registered" />
+		<property name="moment" value="02/01/2020 00:00" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="seatsNumber" value="10" />
+		<property name="manager" ref="manager1"/>
+		<property name="chorbies">
+			<list>
+				<ref bean="chorbi2" />
+			</list>
+		</property>
+		<property name="dalems">
+			<list>
+				<ref bean="dalem2" />
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="event3" class="domain.Event">
+		<property name="title" value="event3" />
+		<property name="description" value="This is a pass event" />
+		<property name="moment" value="05/30/2005 20:00" />
+		<property name="picture" value="http://www.picture3.com" />
+		<property name="seatsNumber" value="5" />
+		<property name="manager" ref="manager1"/>
+		<property name="chorbies">
+			<list>
+			</list>
+		</property>
+		<property name="dalems">
+			<list>
+				<ref bean="dalem3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="event4" class="domain.Event">
+		<property name="title" value="event4" />
+		<property name="description" value="This is a event pass for chorbi1" />
+		<property name="moment" value="05/31/2015 23:00" />
+		<property name="picture" value="http://www.picture4.com" />
+		<property name="seatsNumber" value="5" />
+		<property name="manager" ref="manager2"/>
+		<property name="chorbies">
+			<list>
+				<ref bean="chorbi1" />
+			</list>
+		</property>
+		<property name="dalems">
+			<list>
+				<ref bean="dalem4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="event5" class="domain.Event">
+		<property name="title" value="event5" />
+		<property name="description" value="This is a event without seats" />
+		<property name="moment" value="02/01/2010 00:00" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="seatsNumber" value="1" />
+		<property name="manager" ref="manager3"/>
+		<property name="chorbies">
+			<list>
+				<ref bean="chorbi3" />
+			</list>
+		</property>
+		<property name="dalems">
+			<list>
+				
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="event6" class="domain.Event">
+		<property name="title" value="event6" />
+		<property name="description" value="DescriptionRandom" />
+		<property name="moment" value="02/01/2018 00:00" />
+		<property name="picture" value="http://www.picture1.com" />
+		<property name="seatsNumber" value="2" />
+		<property name="manager" ref="manager3"/>
+		<property name="chorbies">
+			<list>
+				
+			</list>
+		</property>
+		<property name="dalems">
+			<list>
+				
+			</list>
+		</property>
+	</bean>
+
+
+
+
+	<!-- SEARCH TEMPLATES -->
+
+	<bean id="template1" class="domain.SearchTemplate">
+		<property name="relationship" value="ACTIVITIES" />
+		<property name="age" value="22" />
+		<property name="genre" value="WOMAN" />
+		<property name="keyword" value="Betis" />
+		<property name="lastSearch" value="02/01/2010 00:00" />
+		<property name="chorbiesWanted">
+			<list>
+				<ref bean="chorbi4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="template2" class="domain.SearchTemplate">
+		<property name="relationship" value="LOVE" />
+		<property name="age" value="22" />
+		<property name="genre" value="WOMAN" />
+		<property name="keyword" value="que" />
+		<property name="lastSearch" value="02/01/2010 00:00" />
+		<property name="chorbiesWanted">
+			<list>
+				<ref bean="chorbi3" />
+				<ref bean="chorbi4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="template3" class="domain.SearchTemplate">
+		<property name="relationship" value="LOVE" />
+		<property name="age" value="22" />
+		<property name="genre" value="MAN" />
+		<property name="keyword" value="FRIENDSHIP" />
+		<property name="lastSearch" value="02/01/2010 00:00" />
+		<property name="chorbiesWanted">
+			<list>
+				<ref bean="chorbi2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="template4" class="domain.SearchTemplate">
+		<property name="relationship" value="ACTIVITIES" />
+		<property name="age" value="22" />
+		<property name="genre" value="MAN" />
+		<property name="keyword" value="ACTIVITIES" />
+		<property name="lastSearch" value="02/01/2010 00:00" />
+		<property name="chorbiesWanted">
+			<list>
+				<ref bean="chorbi1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="template5" class="domain.SearchTemplate">
+		<property name="relationship" value="ACTIVITIES" />
+		<property name="age" value="22" />
+		<property name="genre" value="MAN" />
+		<property name="keyword" value="ACTIVITIES" />
+		<property name="lastSearch" value="02/01/2010 00:00" />
+		<property name="chorbiesWanted">
+			<list>
+				<ref bean="chorbi1" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- LIKES -->
+
+	<bean id="likeChorbi1Chorbi4" class="domain.Like">
+		<property name="createMoment" value="02/01/2010 00:00" />
+		<property name="comment" value="buff" />
+		<property name="stars" value="3" />
+		<property name="chorbiSender" ref="chorbi1" />
+		<property name="chorbiRecipient" ref="chorbi4" />
+	</bean>
+
+	<bean id="likeChorbi2Chorbi3" class="domain.Like">
+		<property name="createMoment" value="02/01/2010 00:00" />
+		<property name="stars" value="3" />
+		<property name="chorbiSender" ref="chorbi2" />
+		<property name="chorbiRecipient" ref="chorbi3" />
+	</bean>
+
+	<bean id="likeChorbi2Chorbi4" class="domain.Like">
+		<property name="createMoment" value="01/01/2010 00:10" />
+		<property name="comment" value="soy don manue" />
+		<property name="stars" value="1" />
+		<property name="chorbiSender" ref="chorbi2" />
+		<property name="chorbiRecipient" ref="chorbi4" />
+	</bean>
+
+	<bean id="likeChorbi3Chorbi2" class="domain.Like">
+		<property name="createMoment" value="01/01/2010 00:10" />
+		<property name="comment" value="te lo voy a da por pesao" />
+		<property name="stars" value="0" />
+		<property name="chorbiSender" ref="chorbi3" />
+		<property name="chorbiRecipient" ref="chorbi2" />
+	</bean>
+
+	<!-- CHIRPS -->
+
+	<bean id="chirpChorbi2Chorbi3" class="domain.Chirp">
+		<property name="createMoment" value="04/01/2010 00:00" />
+		<property name="subject" value="amistad" />
+		<property name="text" value="claro que si guapi" />
+		<property name="attachments">
+			<list>
+				<value>https://www.tutorialspoint1.com</value>
+			</list>
+		</property>
+		<property name="actorSender" ref="chorbi2" />
+		<property name="actorRecipient" ref="chorbi3" />
+	</bean>
+
+	<bean id="chirp2Chorbi2Chorbi3" class="domain.Chirp">
+		<property name="createMoment" value="08/02/2010 00:00" />
+		<property name="subject" value="contestame" />
+		<property name="text" value=":(" />
+		<property name="attachments">
+			<list>
+				<value>https://www.tutorialspoint1.com</value>
+				<value>https://www.google.com/</value>
+			</list>
+		</property>
+		<property name="actorSender" ref="chorbi2" />
+		<property name="actorRecipient" ref="chorbi3" />
+	</bean>
+
+	<bean id="chirpChorbi3Chorbi1" class="domain.Chirp">
+		<property name="createMoment" value="30/01/1995 00:00" />
+		<property name="subject" value="hola" />
+		<property name="text" value="oc xd" />
+		<property name="attachments">
+			<list>
+			</list>
+		</property>
+		<property name="actorSender" ref="chorbi3" />
+		<property name="actorRecipient" ref="chorbi1" />
+	</bean>
+
+
+	<!-- CREDITCARDS -->
+
+	<bean id="creditCard1" class="domain.CreditCard">
+		<property name="holderName" value="chorbi1 " />
+		<property name="brandName" value="VISA" />
+		<property name="number" value="4556552828947945" />
+		<property name="expirationMonth" value="12" />
+		<property name="expirationYear" value="2018" />
+		<property name="CVV" value="243" />
+		<property name="actor" ref="chorbi1" />
+	</bean>
+
+	<bean id="creditCard2" class="domain.CreditCard">
+		<property name="holderName" value="chorbi2" />
+		<property name="brandName" value="MASTERCARD" />
+		<property name="number" value="5109143443883589" />
+		<property name="expirationMonth" value="11" />
+		<property name="expirationYear" value="2022" />
+		<property name="CVV" value="598" />
+		<property name="actor" ref="chorbi2" />
+	</bean>
+
+	<bean id="creditCard3" class="domain.CreditCard">
+		<property name="holderName" value="chorbi3" />
+		<property name="brandName" value="VISA" />
+		<property name="number" value="4508136657874039" />
+		<property name="expirationMonth" value="1" />
+		<property name="expirationYear" value="2021" />
+		<property name="CVV" value="111" />
+		<property name="actor" ref="chorbi3" />
+	</bean>
+
+	<bean id="creditCard4" class="domain.CreditCard">
+		<property name="holderName" value="chorbi4" />
+		<property name="brandName" value="DISCOVER" />
+		<property name="number" value="6313552118901163" />
+		<property name="expirationMonth" value="4" />
+		<property name="expirationYear" value="2024" />
+		<property name="CVV" value="798" />
+		<property name="actor" ref="chorbi4" />
+	</bean>
+
+	<bean id="creditCard5" class="domain.CreditCard">
+		<property name="holderName" value="manager2" />
+		<property name="brandName" value="VISA" />
+		<property name="number" value="6313552118901163" />
+		<property name="expirationMonth" value="4" />
+		<property name="expirationYear" value="2024" />
+		<property name="CVV" value="798" />
+		<property name="actor" ref="manager2" />
+	</bean>
+
+	<bean id="creditCard6" class="domain.CreditCard">
+		<property name="holderName" value="manager3" />
+		<property name="brandName" value="VISA" />
+		<property name="number" value="6313552118901163" />
+		<property name="expirationMonth" value="4" />
+		<property name="expirationYear" value="2024" />
+		<property name="CVV" value="798" />
+		<property name="actor" ref="manager3" />
+	</bean>
+
+	<!-- COORDINATES -->
+
+	<bean id="coordinate1" class="domain.Coordinate">
+		<property name="country" value="España" />
+		<property name="province" value="Sevilla" />
+		<property name="city" value="Sevilla" />
+		<property name="chorbi" ref="chorbi1" />
+		<property name="searchTemplate" ref="template1" />
+	</bean>
+
+	<bean id="coordinate2" class="domain.Coordinate">
+		<property name="country" value="España" />
+		<property name="province" value="Comunidad de Madrid" />
+		<property name="state" value="Estado de masachuches" />
+		<property name="city" value="Madrid" />
+		<property name="chorbi" ref="chorbi2" />
+		<property name="searchTemplate" ref="template2" />
+	</bean>
+
+	<bean id="coordinate3" class="domain.Coordinate">
+		<property name="country" value="EEUU" />
+		<property name="state" value="California" />
+		<property name="city" value="San Francisco" />
+		<property name="chorbi" ref="chorbi3" />
+		<property name="searchTemplate" ref="template3" />
+	</bean>
+
+	<bean id="coordinate4" class="domain.Coordinate">
+		<property name="country" value="España" />
+		<property name="province" value="Sevilla" />
+		<property name="city" value="Sevilla" />
+		<property name="chorbi" ref="chorbi4" />
+		<property name="searchTemplate" ref="template4" />
+	</bean>
+
+	<!-- CONFIGURATION SYSTEM -->
+
+	<bean id="configurarionSystem" class="domain.ConfigurationSystem">
+		<property name="banner"
+			value="http://www.imagen.com.mx/assets/img/imagen_share.png" />
+		<property name="hoursTemplate" value="1" />
+		<property name="minutesTemplate" value="30" />
+		<property name="secondsTemplate" value="0" />
+		<property name="chorbiFee" value="1.0" />
+		<property name="managerFee" value="5.0" />
+	</bean>
+
+	<!-- DALEMS -->
+
+	<bean id="dalem1" class="domain.Dalem">
+		<property name="code" value="7432--00000" />
+		<property name="createMoment" value="05/06/2017" />
+		<property name="title" value="title1" />
+		<property name="description" value="description1" />
+		<property name="assessment" value="Highly Recommended"/>
+		<property name="administrator" ref="admin" />
+		<property name="event" ref="event1" />
+		<property name="cancel" value="false"/>
+	</bean>
+	
+	<bean id="dalem2" class="domain.Dalem">
+		<property name="code" value="342--29" />
+		<property name="createMoment" value="06/06/2017" />
+		<property name="title" value="title2" />
+		<property name="description" value="description2" />
+		<property name="assessment" value="Recommended"/>
+		<property name="administrator" ref="admin" />
+		<property name="event" ref="event2" />
+		<property name="cancel" value="false"/>
+	</bean>
+	
+	<bean id="dalem3" class="domain.Dalem">
+		<property name="code" value="123--0003" />
+		<property name="createMoment" value="08/06/2017" />
+		<property name="title" value="title3" />
+		<property name="description" value="description3" />
+		<property name="assessment" value="Not Recommended"/>
+		<property name="administrator" ref="admin2" />
+		<property name="event" ref="event3" />
+		<property name="cancel" value="false"/>
+	</bean>
+	
+	<bean id="dalem4" class="domain.Dalem">
+		<property name="code" value="001--0004" />
+		<property name="createMoment" value="06/06/2017" />
+		<property name="title" value="title4" />
+		<property name="description" value="description4" />
+		<property name="assessment" value="Highly Recommended"/>
+		<property name="administrator" ref="admin2" />
+		<property name="event" ref="event4" />
+		<property name="cancel" value="false"/>
+	</bean>
+
+</beans>
